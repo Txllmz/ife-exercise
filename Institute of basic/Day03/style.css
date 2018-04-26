@@ -1,0 +1,35 @@
+h1 {
+    font-family:helvetica,verdana,sans-serif
+    font-size: 32px;
+    font-weight:bolder;
+    color:#1a6ec1;
+}
+h2{
+  color:#5994cf
+}
+.project{
+  font-style:italic;
+  font-weight:bolder;
+  line-height:35px;
+}
+.project .pro_content {
+  font-style:normal;
+  font-weight:lighter;
+  text-shadow:1px 1px rgba(0,0,0,.3);
+}
+.infor{
+  line-height:25px;
+  text-align:left;
+}
+p {
+  text-indent:50px; 
+  color: orange;
+}
+a[href] {
+  color:lightblue;
+}
+.skill{
+    -webkit-text-decoration-line:underline;
+    -moz-text-decoration-line:underline;
+    text-decoration-line:underline;
+}
