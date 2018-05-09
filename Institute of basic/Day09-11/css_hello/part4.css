@@ -1,0 +1,23 @@
+.product {
+    height: 350px;
+    width: 100%;
+    border-bottom: thin solid #EAEAEA;
+}
+.product_info {
+    width: 1000px;
+    margin: 0 auto;
+}
+.product_info h1 {
+    text-align: center;
+    padding: 10px;
+}
+.product_info h3 {
+    text-align: center;
+}
+.product_info div {
+    display: inline-block;
+    width: 320px;
+}
+.product_info p {
+    padding: 20px;
+}

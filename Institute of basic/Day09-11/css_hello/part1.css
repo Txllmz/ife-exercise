@@ -1,0 +1,44 @@
+.index {
+    height: 900px;
+    width: 100%;
+    border-bottom: thin solid #EAEAEA;
+    background: url("../images/banner1.jpg") center center no-repeat;
+    background-size:100% 900px;
+}
+.welcome {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+    height: 600px;
+}
+.welcome1 {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    top:100px;
+    border: thin solid #E7E7E7;
+    padding: 15px;
+}
+.welcome h1{
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+    top: 20px;
+}
+.welcome p{
+    text-align: center;
+
+}
+.welcome h3{
+    text-align: center;
+}
+.welcome1 button {
+    padding: 10px;
+    background-color: transparent;
+    font-weight: bold;
+}
+.welcome1 span {
+    position: relative;
+    left:50px;
+}

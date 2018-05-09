@@ -1,0 +1,42 @@
+.intro {
+    height: 500px;
+    width: 100%;
+    border-bottom: thin solid #EAEAEA;
+}
+.introduction {
+    width: 1000px;
+    margin: 0 auto;
+}
+.introduction_p {
+    margin: 60px 0px;
+}
+.introduction p {
+    text-align: center;
+}
+.introduction h1 {
+    text-align: center;
+}
+.intro_details {
+     display: inline-block;
+     width: 400px;
+     margin: 20px 0px;
+
+ }
+.intro_details1 {
+    display: inline-block;
+    width: 400px;
+    position: relative;
+    right: -160px;
+}
+.intro_details p {
+    text-align: left;
+}
+.intro_details1 p {
+    text-align: left;
+}
+.intro_details2 {
+    font-weight: bold;
+}
+.intro_details3 {
+    color: #656565;
+}

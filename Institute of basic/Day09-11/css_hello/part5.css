@@ -1,0 +1,35 @@
+.bird {
+    height: 700px;
+    width: 100%;
+    border-bottom: thin solid #EAEAEA;
+}
+.bird_info {
+    width: 1000px;
+    margin: 0 auto;
+}
+.bird_image1 {
+    display: inline-block;
+    background-image: url("../images/pic05.jpg");
+    width: 500px;
+    height: 300px;
+    margin: 40px 0px;
+}
+.bird_image1_info {
+    display: inline-block;
+    width: 300px;
+    float: right;
+    padding: 20px;
+}
+.bird_image2 {
+    display: inline-block;
+    background-image: url("../images/pic11.jpg");
+    width: 500px;
+    height: 300px;
+    float: right;
+}
+.bird_image2_info {
+    display: inline-block;
+    width: 300px;
+    float: left;
+    padding: 10px;
+}

@@ -1,0 +1,75 @@
+.doc {
+    height: 500px;
+    width: 100%;
+    border-bottom: thin solid #EAEAEA;
+    background-image: url("../images/banner.jpg");
+}
+.document {
+    width: 1000px;
+    margin: 0 auto;
+}
+.doc_info {
+    display: inline-block;
+    float: left;
+    width: 450px;
+}
+.doc_info h1 {
+    color: white;
+    width: 290px;
+    margin: 40px 0px;
+}
+.doc_info p {
+    color: #656565;
+    width: 290px;
+    margin: 40px 0px;
+}
+#check {
+    padding: 10px;
+    border-color: white;
+}
+#try {
+    padding: 10px;
+    border-color: white;
+    background-color: transparent;
+    color: white;
+}
+.document_info {
+    display: inline-block;
+    width: 900px;
+    height:410px;
+    border-bottom:thin solid white;
+    border-top:thin solid white;
+    border-left:thin solid white;
+    border-top-left-radius: 10pt 10pt;
+    border-bottom-left-radius: 10pt 10pt;
+    float: right;
+    position: relative;
+    right: 0px;
+    top:20px;
+
+
+}
+.document_info_details {
+    background-color: white;
+    width: 850px;
+    /*width: 1000px;*/
+    margin: 0 auto;
+    /*position: relative;
+    left: 42px;*/
+}
+.document_info_details h2{
+    text-align: center;
+}
+.p1{
+    text-align: center;
+    color: #656565;
+}
+.document_info_details div {
+    display: inline-block;
+    width: 250px;
+    border: thin solid #E7E7E7;
+    margin: 0 10px;
+}
+.document_info_details p{
+    color: #656565;
+}

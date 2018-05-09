@@ -1,0 +1,144 @@
+.person {
+    height: 700px;
+    width: 100%;
+    border-bottom: thin solid #EAEAEA;
+}
+.person_info {
+    width: 1000px;
+    margin: 0 auto;
+}
+.person_info h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+.person_info p {
+    text-align: center;
+    font-size:20px;
+    color:#656565;
+}
+.person_info h2 {
+    text-align: center;
+    color: transparent;
+}
+.person1 {
+    display: inline-block;
+    background-image: url("../images/pic01.jpg");
+    width: 450px;
+    padding: 5px;
+    margin: 5px;
+    height: 200px;
+}
+.person1 p {
+      text-align: center;
+      font-size:20px;
+      color:transparent;
+  }
+.person1:hover .person_mask{
+    background-color: #656565;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    position: relative;
+    width: 458px;
+    height: 210px;
+    left: -4px;
+    top:-24px;
+}
+.person1:hover p{
+    color:#919191;
+}
+.person1:hover h2{
+    color:white;
+}
+.person2 {
+    display: inline-block;
+    background-image: url("../images/pic03.jpg");
+    width: 450px;
+    padding: 5px;
+    margin: 5px;
+    height: 200px;
+}
+.person2 p {
+    text-align: center;
+    font-size:20px;
+    color:transparent;
+}
+.person2:hover p{
+    color:#919191;
+}
+.person2:hover h2{
+    color:white;
+}
+.person2:hover .person_mask{
+    background-color: #656565;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    position: relative;
+    width: 458px;
+    height: 210px;
+    left: -4px;
+    top:-24px;
+}
+.person3 {
+    display: inline-block;
+    background-image: url("../images/pic14.jpg");
+    width: 450px;
+    padding: 5px;
+    margin: 5px;
+    height: 200px;
+}
+.person3 p {
+    text-align: center;
+    font-size:20px;
+    color:transparent;
+}
+.person3:hover p{
+    color:#919191;
+}
+.person3:hover h2{
+    color:white;
+}
+.person3:hover .person_mask{
+    background-color: #656565;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    position: relative;
+    width: 458px;
+    height: 210px;
+    left: -4px;
+    top:-24px;
+}
+.person4 {
+    display: inline-block;
+    background-image: url("../images/pic16.jpg");
+    width: 450px;
+    padding: 5px;
+    margin: 5px;
+    height: 200px;
+}
+.person4 p {
+    text-align: center;
+    font-size:20px;
+    color:transparent;
+}
+.person4:hover p{
+    color:#919191;
+}
+.person4:hover h2{
+    color:white;
+}
+.person4:hover .person_mask{
+    background-color: #656565;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    position: relative;
+    width: 458px;
+    height: 210px;
+    left: -4px;
+    top:-24px;
+}
