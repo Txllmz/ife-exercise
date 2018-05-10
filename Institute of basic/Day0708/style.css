@@ -27,17 +27,17 @@ a{
     background-color:#66BB33 ;
     position: relative;
 }
-.green div {
+.Green {
     width:960px;
     margin: 0 auto;
-    position: absolute;
-    top:250px;
-    right: 500px;
-    right: 500px;
 }
-.green_float {
-    float: right;
+.green0 {
+     width: 140px;
+     float: right;
+     position: relative;
+     top:250px
 }
+
 .green1 {
     background-color:#B2DD99 ;
     border-style: groove;
