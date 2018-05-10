@@ -68,9 +68,12 @@ a{
     border-left: thin solid #EEEEEE;
     border-top: thin solid #EEEEEE;
     border-right: thin solid #EEEEEE;
-    border-top-left-radius: 10px 20px;;
-    border-top-right-radius: 10px 20px;;
+    border-top-left-radius: 10px 20px;
+    border-top-right-radius: 10px 20px;
     padding: 12px;
+}
+.banner .banner0 {
+    border-bottom: thin solid white;
 }
 .banner .banner1 {
     background-color: #EEEEEE;
