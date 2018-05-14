@@ -8,13 +8,17 @@
     margin: 0 auto;
 }
 .introduction_p {
-    margin: 60px 0px;
+    margin: 0px;
+    position: relative;
+    top:20px;
 }
 .introduction p {
     text-align: center;
 }
 .introduction h1 {
     text-align: center;
+    position: relative;
+    top:20px;
 }
 .intro_details {
      display: inline-block;

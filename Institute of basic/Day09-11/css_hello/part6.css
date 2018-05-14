@@ -7,7 +7,7 @@
     width: 1000px;
     margin: 0 auto;
 }
-.person_info h1 {
+.person_info_head {
     text-align: center;
     font-size: 40px;
     font-weight: bold;

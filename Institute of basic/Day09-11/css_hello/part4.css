@@ -7,9 +7,11 @@
     width: 1000px;
     margin: 0 auto;
 }
-.product_info h1 {
+.product_info_head {
+    display: block;
     text-align: center;
-    padding: 10px;
+    margin: 0;
+    /* padding: 10px; */
 }
 .product_info h3 {
     text-align: center;

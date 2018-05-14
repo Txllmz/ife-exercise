@@ -10,7 +10,6 @@
 }
 .doc_info {
     display: inline-block;
-    float: left;
     width: 450px;
 }
 .doc_info h1 {
@@ -42,10 +41,9 @@
     border-left:thin solid white;
     border-top-left-radius: 10pt 10pt;
     border-bottom-left-radius: 10pt 10pt;
-    float: right;
     position: relative;
-    right: 0px;
-    top:20px;
+    right: -700px;
+    top:-330px;
 
 
 }
