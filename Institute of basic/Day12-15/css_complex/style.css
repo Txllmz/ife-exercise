@@ -1,0 +1,135 @@
+/******header******/
+header {
+    background-color: #333333;
+    width: 100%;
+    height: 80px;
+}
+.head_logo {
+    color: white;
+    width: 960px;
+    margin: 0 auto;
+}
+.head_logo .logo {
+    font-size: 30px;
+}
+.head_logo .logo_right {
+    float: right;
+}
+a{
+    color: white;
+    text-decoration: underline;
+}
+
+/****section****/
+.green {
+    width: 100%;
+    height: 300px;
+    background-color:#66BB33 ;
+    position: relative;
+}
+.Green {
+    width:960px;
+    margin: 0 auto;
+}
+.green0 {
+     width: 140px;
+     float: right;
+     position: relative;
+     top:250px
+}
+
+.green1 {
+    background-color:#B2DD99 ;
+    border-style: groove;
+    border-width: thin;
+    border-color: black;
+    padding: 10px;
+}
+.green2 {
+    background-color:#E0F1D6 ;
+    border-style: groove;
+    border-width: thin;
+    border-color: black;
+    padding: 20px 10px 10px 10px;/*上右下左*/
+}
+.banner {
+    height: 70px;
+    border-bottom:thin solid #EEEEEE;
+   /* position: relative;*/
+}
+.banner div {
+    width:960px;
+    margin: 0 auto;
+    position: relative;
+    top:37px;
+    left:-15px;
+}
+.banner span {
+    border-left: thin solid #EEEEEE;
+    border-top: thin solid #EEEEEE;
+    border-right: thin solid #EEEEEE;
+    border-top-left-radius: 10px 20px;
+    border-top-right-radius: 10px 20px;
+    padding: 12px;
+}
+.banner .banner0 {
+    border-bottom: thin solid white;
+}
+.banner .banner1 {
+    background-color: #EEEEEE;
+}
+.main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.main div {
+    height: 200px;
+    position: relative;
+}
+.first {
+    top:15px;
+}
+.second {
+    top:9px;
+}
+.third {
+    top:3px;
+}
+.first span{
+    display: inline-block;
+    padding: 80px;
+    border-style: groove;
+    border-width: thin;
+    border-color: #EEEEEE;
+    width: 160px;
+}
+.second span {
+    display: inline-block;
+    padding: 80px;
+    border-style: groove;
+    border-width: thin;
+    border-color: #EEEEEE;
+    width: 78.5px;
+}
+.third span {
+    display: inline-block;
+    padding: 80px;
+    border-style: groove;
+    border-width: thin;
+    border-color: #EEEEEE;
+    width: 160px;
+}
+
+/*****footer****/
+footer {
+    background-color: #666666;
+    width:100%;
+    height: 120px;
+}
+.copyright{
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+    width:200px
+}

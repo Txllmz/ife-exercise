@@ -1,0 +1,43 @@
+/******<header>******/
+header {
+   height: 100px;
+    width: 800px;
+    color: white;
+    background-color:#848484;
+    border: 20px;
+    margin:5px;
+}
+h1{
+    border: 20px;
+    padding: 22px;
+    margin:15px;
+}
+/******<section>******/
+span {
+    font-weight: bold;
+}
+a {
+    color: blue;
+    text-decoration:underline;
+    font-weight: 500;
+}
+div {
+    font-weight: bold;
+}
+h2 {
+    float:left;
+    background-color:#D6D6D6;
+    padding: 30px;
+   margin: 0px 3px;
+
+}
+.light {
+    font-weight: 500;
+}
+.first {
+    height: 91.26px;
+    width:800px;
+    border-style: groove;
+    border-color: #E5E5E5;
+    border-width: thin;
+}

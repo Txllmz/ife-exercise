@@ -1,0 +1,29 @@
+/******<header>******/
+header {
+    float:left;
+    height: 630px;
+    color: white;
+    background-color:#65A4FA;
+    padding: 40px;
+    border: 20px;
+    margin:5px 30px;
+}
+/******<section>******/
+span {
+    font-weight: bold;
+}
+a {
+    color: blue;
+    text-decoration:underline;
+    font-weight: 500;
+}
+div {
+    font-weight: bold;
+}
+h2 {
+    margin:22px 5px;
+    height: 30px;
+}
+.light {
+    font-weight: 500;
+}
