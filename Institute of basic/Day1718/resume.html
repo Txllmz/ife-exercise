@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简历</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style_2.css">
+<body>
+<header>
+    <h1>简历</h1>
+</header>
+<section>
+    <h2>基本信息</h2>
+    <div class="first">
+            <span>姓名  <span class="light">张三</span></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>性别  <span class="light">男</span></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>应聘职位  <span class="light">Web前端工程师</span></span>
+    </div>
+    <h2>联系方式</h2>
+    <div class="first">
+        <span>手机  <span class="light">12312341234</span></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>Email  <a>joinefe@baidu.com</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>个人主页  <a>Github</a></span>
+    </div>
+
+    <h2 id="bt1">能力描述（点击有惊喜）</h2>
+    <div class="first">
+    <div>技术能力 <span class="light">熟练掌握HTML,CSS, Javascript</span></div>
+
+    <p></p>
+
+    <div>综合能力<span class="light">良好的沟通,主动积极,努力勤奋</span></div>
+    </div>
+
+    <h2>教育经历</h2>
+    <div class="first">
+    <div>本科 <span class="light">百度前端技术学院小薇学院</span></div>
+
+    <p></p>
+    <div>研究生<span class="light">百度前端技术学院大斌学院</span></div>
+    </div>
+
+    <h2>项目经历</h2>
+    <div class="first">
+    <div>小度小度<span class="light">作为前端工程师角色参与了ABC组件的开发</span></div>
+
+    <p></p>
+    <div id="bt2">SAN Doc<span id="bt3" class="light">作为文档工程师参与了 SAN Doc编写（点击有惊喜）</span></div>
+    </div>
+</section>
+
+</body>
+<script type="text/javascript">
+document.getElementById("bt1").onclick=function(){
+    console.log("~~~我的能力远不止这些哦~~~");
+}
+document.getElementById("bt2").onclick=function(){
+    var oPNode = document.getElementById('bt3')
+    var node = document.createElement('span');//创建一个文本节点
+    node.innerHTML = "想了解什么是SAN Doc吗？详情就在www.dsd.com~~~";//文本内容
+    oPNode.appendChild(node);
+}
+var myDate = new Date();
+var hour=myDate.getHours();
+if(hour>=7 && hour<=12)
+{
+    alert("早上好~");
+}
+else if(hour>12 && hour<=18)
+{
+    alert("下午好~");
+}
+else if(hour>18 && hour<=23)
+{
+    alert("晚上好~");
+}
+</script>
+</html>

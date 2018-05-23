@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>感受JS的乐趣                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </title>
+</head>
+
+<body>
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+</body>
+<script type="text/javascript">
+//加法
+document.getElementById("add-btn").onclick = function() {
+        var num1= Number(document.getElementById("first-number").value);
+        var num2= Number(document.getElementById("second-number").value);
+        var re=num1+num2;
+        var oPNode = document.getElementById('result')
+        var node = document.createElement('span');//创建一个文本节点
+        node.innerHTML = ':'+re;//文本内容
+        oPNode.appendChild(node);
+    }
+//减法
+document.getElementById("minus-btn").onclick = function() {
+        var num1= Number(document.getElementById("first-number").value);
+        var num2= Number(document.getElementById("second-number").value);
+        if(num1<num2)
+        {
+            alert("结果为负，不符合要求，请重新输入！");
+        }
+        else
+        {
+        var re=num1-num2;
+        var oPNode = document.getElementById('result')
+        var node = document.createElement('span');//创建一个文本节点
+        node.innerHTML = ':'+re;//文本内容
+        oPNode.appendChild(node);
+        }
+        
+    }
+//乘法
+document.getElementById("times-btn").onclick = function() {
+        var num1= Number(document.getElementById("first-number").value);
+        var num2= Number(document.getElementById("second-number").value);
+        var re=num1*num2;
+        var oPNode = document.getElementById('result')
+        var node = document.createElement('span');//创建一个文本节点
+        node.innerHTML = ':'+re;//文本内容
+        oPNode.appendChild(node);
+    }
+//除法
+document.getElementById("divide-btn").onclick = function() {
+        var num1= Number(document.getElementById("first-number").value);
+        var num2= Number(document.getElementById("second-number").value);
+        if(num2<=0)
+        {
+            alert("除数不能为0，请重新输入！")
+        }
+        else
+        {
+        var re=num1/num2;
+        var oPNode = document.getElementById('result')
+        var node = document.createElement('span');//创建一个文本节点
+        node.innerHTML = ':'+re;//文本内容
+        oPNode.appendChild(node);
+        }
+        
+    }
+</script>
+</html>

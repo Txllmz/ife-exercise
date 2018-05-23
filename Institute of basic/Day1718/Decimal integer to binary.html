@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>十进制转为二进制</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </title>
+</head>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+</body>
+<script type="text/javascript">
+ // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+function dec2bin(decNumber,binbit) {
+    var bin=[];
+    if(decNumber>0)
+    {
+      while(decNumber/2!==0)
+      {
+          bin.push(decNumber%2);
+          decNumber/=2;
+          decNumber=Math.floor(decNumber);
+      }
+      if(binbit<=bin.length)
+      {
+        bin.reverse();
+        var str=bin.join("");
+      }
+      else
+      {   var len=binbit-bin.length;
+          for(var i=0;i<len;i++)
+          {
+              bin.push(0);
+          }
+          bin.reverse();
+          var str=bin.join("");
+      }
+      var oPNode = document.getElementById('result')
+      var node = document.createElement('span');//创建一个文本节点
+      node.innerHTML = ':'+str;//文本内容
+      oPNode.appendChild(node);
+    }
+   else
+    {
+       alert("请输入正整数！");
+    }
+}
+
+
+document.getElementById("trans-btn").onclick = function() {
+        var num1= Number(document.getElementById("dec-number").value);
+        var num2= Number(document.getElementById("bin-bit").value);
+        if(num1<=0)
+        {
+            alert("请输入正整数！")
+        }
+        else
+        {
+        dec2bin(num1,num2);
+        }
+        
+    }
+</script>
+</html>
