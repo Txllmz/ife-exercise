@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find Dom</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </title>
+</head>
+
+<body>
+        <div id="wrapper">
+                <div id="news-top" class="section">
+                    <h3>Some title</h3>
+                    <div class="content">
+                        <ul>
+                            <li><span>HTML</span><a href="">Some Link1</a></li>
+                            <li><span>JS</span><a class="active" href="">Some Link2</a></li>
+                            <li><span>CSS</span><a href="">Some Link3</a></li>
+                            <li><span>JS</span><a href="">Some Link4</a></li>
+                        </ul>
+                    </div>
+                    <img src="">
+                    <p class="">Some Text</p>
+                </div>
+                <div id="news-normal" class="section">
+                    <h3>Some title</h3>
+                    <div class="content">
+                        <ul>
+                            <li><span>HTML</span><a href="">Some Link1</a></li>
+                            <li><span>HTML</span><a href="">Some Link2</a></li>
+                            <li><span>JS</span><a class="active" href="#">Some Link3</a></li>
+                            <li><span>CSS</span><a href="">Some Link4</a></li>
+                        </ul>
+                    </div>
+                    <img src="">
+                    <p class="">Some Text</p>
+                </div>      
+            </div>
+</body>
+<script src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    function getAllListItem() {
+        // 返回页面中所有li标签
+        return document.getElementsByTagName("li");
+    }
+
+    function findAllHtmlSpanInOneSection(sectionId) {
+        const sec=document.getElementById(sectionId);
+        const sp=sec.getElementsByTagName("span");
+        for(var i=0;i<sp.length;i++)
+        {
+            if(sp[i].innerText=="HTML")
+            {
+                console.log(sp[i]);
+            }
+        }
+        // 返回某个section下所有span中内容为HTML的span标签
+    }
+
+    function findListItem(sectionId, spanCont) {
+        const sec=document.getElementById(sectionId);
+        const l=sec.getElementsByTagName("li");
+        const sp=l.getElementsByTagName("span");
+        for(var i=0;i<sp.length;i++)
+        {
+            if(sp[i].innerText==spanCont)
+            {
+                console.log(sp[i]);
+            }
+        }
+        // 返回某个section下，所有所包含span内容为spanCont的LI标签
+    }
+
+    function getActiveLinkContent(sectionId) {
+        const sec=document.getElementById(sectionId);
+        const $aActive = sec.querySelector("a.active");
+        console.log($aActive.innerText);
+        // 返回某个section下，class为active的链接中包含的文字内容
+    }
+    
+    getActiveLinkContent("news-normal");
+
+</script>
+</html>
