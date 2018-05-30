@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>talk with webpage</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </title>
+</head>
+<style>
+        
+        #interval {
+            border-bottom: solid thin black;
+            padding-bottom: 10px;
+            padding-top: 10px;  
+        }
+        /* code 2 */
+        select {
+            display: none;
+        } 
+        /* code 3 */
+        .palette {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .palette li {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+</style>
+<body>
+    <!-- code 1 -->
+    <div id="interval">
+            <input id="name" type="text" onkeydown="ff(event)">    
+            <button id="submit-btn">Submit</button>
+    </div>
+    <!-- code 2 -->
+    <div id="interval">
+                <label>
+                    <input id="school" name="status" type="radio">
+                    School
+                </label>
+                <label>
+                    <input id="company" name="status" type="radio">
+                    Company
+                </label>
+            
+                <select id="school-select">        
+                    <option>北京邮电大学</option>
+                    <option>黑龙江大学</option>
+                    <option>华中科技大学</option>
+                </select>
+            
+                <select id="company-select">        
+                    <option>百度</option>
+                    <option>爱奇艺</option>        
+                </select>
+    </div>
+    <!-- code 3 -->
+    <div id="interval">
+            <ul class="palette">
+                    <li style="background-color:crimson"></li>
+                    <li style="background-color:bisque"></li>
+                    <li style="background-color:blueviolet"></li>
+                    <li style="background-color:coral"></li>
+                    <li style="background-color:chartreuse"></li>
+                    <li style="background-color:darkolivegreen"></li>
+                    <li style="background-color:cyan"></li>
+                    <li style="background-color:#194738"></li>        
+                </ul>
+            
+                <p class="color-picker"></p>
+            
+    </div>
+    <!-- code 4 -->
+    <div id="interval">
+            <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+            <button id="fade-btn">淡出</button>
+    </div>
+    <!-- code 5 --> 
+    <div id="interval">
+         <div id="smile">
+
+         </div>
+    </div> 
+</body>
+<script src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+       //    <!-- code 1 -->
+      document.getElementById("submit-btn").onclick=function(){
+          console.log(document.getElementById("name").value);
+          };
+      function ff(event)
+          {
+            if(event.keyCode=="13")
+          {
+            console.log(document.getElementById("name").value);
+          }
+          else if(event.keyCode=="27")
+          {
+            document.getElementById("name").value=null;
+          }
+          }
+     
+      //    <!-- code 2 -->
+      document.getElementById("school").onmousedown=function(){
+        document.getElementById('school-select').style.cssText="display:block";
+        document.getElementById('company-select').style.cssText="display:none";
+      }
+      document.getElementById("company").onmousedown=function(){
+        document.getElementById('company-select').style.cssText="display:block";
+        document.getElementById('school-select').style.cssText="display:none";
+      }
+      
+       //    <!-- code 3 -->
+        var list = document.querySelectorAll("li");
+        for (var i = i = 0, len = list.length; i < len; i++) {
+            list[i].onclick = function(e) {
+                var t = e.target;
+                var c = t.style.backgroundColor;
+                var p = document.getElementsByClassName("color-picker")[0];
+                p.innerHTML = c;
+                p.style.color = c;
+
+            }
+        }
+
+        //    <!-- code 4 -->
+        var p,q;
+        document.getElementById("fade-btn").onclick=function(){
+        
+        if(this.innerText=="淡入")
+       {
+     
+      document.getElementById("fade-obj").style.cssText= "width:300px;height:300px;background:#000;opacity:0";
+      p=setInterval(out,500,"aaa~");
+     
+       }
+        else if(this.innerText=="淡出")
+        { 
+           document.getElementById("fade-obj").style.cssText= "width:300px;height:300px;background:#000;opacity:1";
+           q=setInterval(show,500);
+         
+        }
+        }
+       
+        function out(){ 
+        document.getElementById("fade-btn").disabled=true;
+        var num=Number(document.getElementById("fade-obj").style.opacity);
+        num =num+0.1; 
+        document.getElementById("fade-obj").style.opacity=num;
+        if(Number(num)==1)
+           {
+            document.getElementById("fade-btn").disabled=false;
+            document.getElementById("fade-btn").innerText="淡出";
+            clearInterval(p);
+           
+           }
+        } 
+
+        function show(){ 
+        document.getElementById("fade-btn").disabled=true;
+        var num=document.getElementById("fade-obj").style.opacity;
+        num =num-0.1; 
+        document.getElementById("fade-obj").style.opacity=num;
+        if(Number(num)==0)
+           {
+            document.getElementById("fade-btn").disabled=false;
+            document.getElementById("fade-btn").innerText="淡入";
+            clearInterval(q);
+           }     
+        }
+        
+     //    <!-- code 5 -->    
+     document.getElementById("smile").style.cssText="width:480px;height:480px;background-image: url(http://ife.baidu.com/2016/static/img/erik_ce204002.jpg);background-position-y:0";
+    
+     var n=setInterval(flash,1000);
+     function flash(){
+        var m=document.getElementById("smile").style.backgroundPositionY;
+        var num =Number(m.substring(0,m.length-2));
+        num =num+480; 
+        document.getElementById("smile").style.backgroundPositionY=String(num)+"px";
+        if(Number(num)==7680)
+           {
+            clearInterval(n);
+           }   
+     }
+</script>
+</html>
