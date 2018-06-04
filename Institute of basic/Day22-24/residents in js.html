@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>residents in js</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </title>
+</head>
+<style>
+        
+        #interval {
+            border-bottom: solid thin black;
+            padding-bottom: 10px;
+            padding-top: 10px;  
+        }
+        
+</style>
+<body>
+    <!-- code 1 -->
+    <div id="interval">
+        <div>
+            <label>Number A:<input id="radio-a" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
+            <label>Number B:<input id="radio-b" type="radio" name="math-obj" value="b"></label><input id="num-b" type="text">
+        </div>
+        <div>
+            <button id="bt1">判断当前选中的输入框输入内容是否为数字</button>
+            <button id="bt2">把 A 四舍五入为 B 个小数位数的数字</button>
+            <button id="bt3">当前选中数字的绝对值</button>
+            <button id="bt4">对当前选中的数字进行上舍入</button>
+            <button id="bt5">对当前选中的数字进行下舍入</button>
+            <button id="bt6">把当前选中的数字四舍五入为最接近的整数</button>
+            <button id="bt7">返回 A 和 B 中的最高值</button>
+            <button id="bt8">返回 A 和 B 中的最低值</button>        
+        </div>
+        <p id="result"></p>  
+    </div>
+    <!-- code 2 -->
+    <div id="interval">
+        <div>
+            <label>String A:
+                <input id="radio-a1" type="radio" checked="true" name="str-obj" value="a">
+            </label>
+            <textarea id="str-a"></textarea>
+            <label>String B:
+                <input id="radio-b1" type="radio" name="str-obj" value="b">
+            </label>
+            <textarea id="str-b"></textarea>        
+            <label>Num A：<input id="num-a1" type="number" value="0"></label>
+            <label>Num B：<input id="num-b1" type="number" value="1"></label>
+        </div>
+        <div>
+            <button id="bt9">获取当前选中输入的内容长度</button>
+            <button id="bt10">当前选中输入中的第3个字符</button>
+            <button id="bt11">把两个输入框的文字连接在一起输出（concat）</button>
+            <button id="bt12">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+            <button id="bt13">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+            <button id="bt14">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+            <button id="bt15">当前选中输入框的行数</button>
+            <button id="bt16">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+            <button id="bt17">把所选输入框中的内容全部转为大写</button>
+            <button id="bt18">把所选输入框中的内容全部转为小写</button>
+            <button id="bt19">把所选输入框中内容的半角空格全部去除</button>
+            <button id="bt20">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+        </div>
+        <p id="result1"></p>      
+    </div>
+    <!-- code 3 -->
+    <div id="interval">
+        <input id="queue-input" type="text">
+        <p id="queue-cont">队列内容：apple&lt;-pear</p>    
+        <button id="in-btn">入队</button>
+        <button id="out-btn">出队</button>
+        <button id="font-btn">打印队头元素内容</button>
+        <button id="empty-btn">判断队列是否为空</button>           
+    </div>
+    <!-- code 4 -->
+    <div id="interval">
+           
+    </div>
+    <!-- code 5 --> 
+    <div id="interval">
+         
+    </div> 
+</body>
+<script src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    //    <!-- code 1 -->
+      //判断当前选中的输入框输入内容是否为数字
+      document.getElementById("bt1").onclick=function(){
+          if(document.getElementById("radio-a").checked==true)
+          {   var a=Number(document.getElementById("num-a").value);
+              if(String(a)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+          }
+          else if(document.getElementById("radio-b").checked==true)
+          { var b=Number(document.getElementById("num-b").value);
+            if(String(b)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+          }
+      }
+
+      //把 A 四舍五入为 B 个小数位数的数字
+      document.getElementById("bt2").onclick=function(){
+        var a=Number(document.getElementById("num-a").value);
+        var b=Number(document.getElementById("num-b").value);
+        if(String(a)=='NaN' || String(b)=='NaN')
+        {
+            console.log("当前输入的不是数字");
+        }
+        else
+        {
+            document.getElementById("result").innerText=a.toFixed(b);
+        }
+      }
+      //当前选中数字的绝对值
+       document.getElementById("bt3").onclick=function(){
+        if(document.getElementById("radio-a").checked==true)
+          {   var a=Number(document.getElementById("num-a").value);
+              if(String(a)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.abs(a);
+              }
+          }
+          else if(document.getElementById("radio-b").checked==true)
+          { var b=Number(document.getElementById("num-b").value);
+            if(String(b)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.abs(b);
+              }
+          }
+      }
+      //对当前选中的数字进行上舍入
+      document.getElementById("bt4").onclick=function(){
+        if(document.getElementById("radio-a").checked==true)
+          {   var a=Number(document.getElementById("num-a").value);
+              if(String(a)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.ceil(a);
+              }
+          }
+          else if(document.getElementById("radio-b").checked==true)
+          { var b=Number(document.getElementById("num-b").value);
+            if(String(b)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.ceil(b);
+              }
+          }
+      }
+      //对当前选中的数字进行下舍入
+      document.getElementById("bt5").onclick=function(){
+        if(document.getElementById("radio-a").checked==true)
+          {   var a=Number(document.getElementById("num-a").value);
+              if(String(a)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.floor(a);
+              }
+          }
+          else if(document.getElementById("radio-b").checked==true)
+          { var b=Number(document.getElementById("num-b").value);
+            if(String(b)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.floor(b);
+              }
+          }
+      }
+      //把当前选中的数字四舍五入为最接近的整数
+      document.getElementById("bt6").onclick=function(){
+        if(document.getElementById("radio-a").checked==true)
+          {   var a=Number(document.getElementById("num-a").value);
+              if(String(a)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.round(a);
+              }
+          }
+          else if(document.getElementById("radio-b").checked==true)
+          { var b=Number(document.getElementById("num-b").value);
+            if(String(b)=='NaN')
+              {
+                 console.log("当前输入的不是数字");
+              }
+              else
+              {
+                document.getElementById("result").innerText=Math.round(b);
+              }
+          }
+      }
+       //返回 A 和 B 中的最高值
+       document.getElementById("bt7").onclick=function(){
+        var a=Number(document.getElementById("num-a").value);
+        var b=Number(document.getElementById("num-b").value);
+        if(String(a)=='NaN' || String(b)=='NaN')
+        {
+            console.log("当前输入的不是数字");
+        }
+        else
+        {
+            document.getElementById("result").innerText=Math.max(a,b);
+        }
+      }
+        //返回 A 和 B 中的最低值
+        document.getElementById("bt8").onclick=function(){
+        var a=Number(document.getElementById("num-a").value);
+        var b=Number(document.getElementById("num-b").value);
+        if(String(a)=='NaN' || String(b)=='NaN')
+        {
+            console.log("当前输入的不是数字");
+        }
+        else
+        {
+            document.getElementById("result").innerText=Math.min(a,b);
+        }
+      }
+    //    <!-- code 2 -->
+      //获取当前选中输入的内容长度
+      document.getElementById("bt9").onclick=function(){
+        
+        if(document.getElementById("radio-a1").checked==true)
+          {   var a=document.getElementById("str-a").value;
+              document.getElementById("result1").innerText=a.length;
+              
+          }
+          else if(document.getElementById("radio-b1").checked==true)
+          {  var b=document.getElementById("str-b").value;
+            
+                document.getElementById("result1").innerText=b.length;
+          }
+      }
+       //当前选中输入中的第3个字符
+       document.getElementById("bt10").onclick=function(){
+        
+        if(document.getElementById("radio-a1").checked==true)
+          {   var a=document.getElementById("str-a").value;
+              document.getElementById("result1").innerText=a.charAt(2);
+              
+          }
+          else if(document.getElementById("radio-b1").checked==true)
+          {  var b=document.getElementById("str-b").value;
+            
+              document.getElementById("result1").innerText=b.charAt(2);
+          }
+      }
+       //把两个输入框的文字连接在一起输出（concat）
+       document.getElementById("bt11").onclick=function(){
+            var a=document.getElementById("str-a").value;
+            var b=document.getElementById("str-b").value;
+            document.getElementById("result1").innerText=a.concat(b);
+      }
+       //输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）
+       document.getElementById("bt12").onclick=function(){
+            var a=document.getElementById("str-a").value;
+            var b=document.getElementById("str-b").value;
+            document.getElementById("result1").innerText=a.indexOf(b);
+      }
+       //输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）
+       document.getElementById("bt13").onclick=function(){
+            var a=document.getElementById("str-a").value;
+            var b=document.getElementById("str-b").value;
+            document.getElementById("result1").innerText=b.lastIndexOf(a);
+      }
+       //使用slice获取选中输入框内容的部分内容，参数为num-a及num-b
+       document.getElementById("bt14").onclick=function(){
+        var numa=Number(document.getElementById("num-a1").value);
+        var numb=Number(document.getElementById("num-b1").value);
+        if(document.getElementById("radio-a1").checked==true)
+          {   var a=document.getElementById("str-a").value;
+              document.getElementById("result1").innerText=a.slice(numa,numb);
+              
+          }
+          else if(document.getElementById("radio-b1").checked==true)
+          {  var b=document.getElementById("str-b").value;
+            
+              document.getElementById("result1").innerText=b.slice(numa,numb);
+          }
+      }
+       //当前选中输入框的行数?????
+       document.getElementById("bt15").onclick=function(){
+        var numa=Number(document.getElementById("num-a1").value);
+        var numb=Number(document.getElementById("num-b1").value);
+        if(document.getElementById("radio-a1").checked==true)
+          {   var a=document.getElementById("str-a").style;
+                document.getElementById("result1").innerText=a.slice(numa,numb);
+              
+          }
+          else if(document.getElementById("radio-b1").checked==true)
+          {  var b=document.getElementById("str-b").value;
+            
+              document.getElementById("result1").innerText=b.slice(numa,numb);
+          }
+      }
+       //使用substr获取选中输入框内容的子字符串，参数为num-a及num-b
+       document.getElementById("bt16").onclick=function(){
+        var numa=Number(document.getElementById("num-a1").value);
+        var numb=Number(document.getElementById("num-b1").value);
+        if(document.getElementById("radio-a1").checked==true)
+          {   var a=document.getElementById("str-a").value;
+              document.getElementById("result1").innerText=a.substr(numa,numb);
+              
+          }
+          else if(document.getElementById("radio-b1").checked==true)
+          {  var b=document.getElementById("str-b").value;
+            
+              document.getElementById("result1").innerText=b.substr(numa,numb);
+          }
+      }
+       //把所选输入框中的内容全部转为大写
+       document.getElementById("bt17").onclick=function(){
+       
+        if(document.getElementById("radio-a1").checked==true)
+          {   var a=document.getElementById("str-a").value;
+              document.getElementById("result1").innerText=a.toUpperCase();
+              
+          }
+          else if(document.getElementById("radio-b1").checked==true)
+          {  var b=document.getElementById("str-b").value;
+            
+              document.getElementById("result1").innerText=b.toUpperCase();
+          }
+      }
+       //把所选输入框中的内容全部转为小写
+       document.getElementById("bt18").onclick=function(){
+       
+       if(document.getElementById("radio-a1").checked==true)
+         {   var a=document.getElementById("str-a").value;
+             document.getElementById("result1").innerText=a.toLowerCase();
+             
+         }
+         else if(document.getElementById("radio-b1").checked==true)
+         {  var b=document.getElementById("str-b").value;
+           
+             document.getElementById("result1").innerText=b.toLowerCase();
+         }
+      }
+      //把所选输入框中内容的半角空格全部去除????????
+      document.getElementById("bt19").onclick=function(){
+       
+       if(document.getElementById("radio-a1").checked==true)
+         {   var a=document.getElementById("str-a").value;
+             document.getElementById("result1").innerText=a.toLowerCase();
+             
+         }
+         else if(document.getElementById("radio-b1").checked==true)
+         {  var b=document.getElementById("str-b").value;
+           
+             document.getElementById("result1").innerText=b.toLowerCase();
+         }
+     }
+      //把所选输入框中内容的a全部替换成另外一个输入框中的内容
+      document.getElementById("bt20").onclick=function(){
+       
+       if(document.getElementById("radio-a1").checked==true)
+         {   var a=document.getElementById("str-b").value;
+             document.getElementById("str-a").value=a;
+         }
+         else if(document.getElementById("radio-b1").checked==true)
+         {   var b=document.getElementById("str-a").value;
+             document.getElementById("str-b").value=b;
+         }
+     }
+
+    //    <!-- code 3 -->
+ /*
+实现一个字符串头尾去除空格的函数
+注意需要去除的空格，包括全角、半角空格
+暂时不需要学习和使用正则表达式的方式
+*/
+function diyTrim(str) {
+    var result = "";
+
+    result=str.trim();// do something
+
+    return result
+}
+
+// 测试用例
+console.log(diyTrim(' a f b    ')); // ->a f b
+console.log(diyTrim('    ffdaf    ')); // ->ffdaf
+console.log(diyTrim('1    ')); // ->1
+console.log(diyTrim('　　f')); // ->f
+console.log(diyTrim('  　  a f b 　　 ')); // ->a f b
+console.log(diyTrim(' ')); // ->
+console.log(diyTrim('　')); // ->
+console.log(diyTrim('')); // ->
+
+/*
+去掉字符串str中，连续重复的地方
+*/
+function removeRepetition(str) {
+    var result = "";
+    result=str.split("");
+    var len=result.length;
+    var arr=new Array();
+    for(var i=0;i<len;i++)
+    {
+        if(result[i]!=result[i+1])
+        {
+            arr.push(result[i]);
+        }
+    }
+    return arr.join("");
+}
+
+// 测试用例
+console.log(removeRepetition("aaa")); // ->a
+console.log(removeRepetition("abbba")); // ->aba
+console.log(removeRepetition("aabbaabb")); // ->abab
+console.log(removeRepetition("")); // ->
+console.log(removeRepetition("abc")); // ->abc
+
+    //    <!-- code 4 -->
+    var tree = {
+    "id": 0,
+    "name": "root",
+    "left": {
+        "id": 1,
+        "name": "Simon",
+        "left": {
+            "id": 3,
+            "name": "Carl",
+            "left": {
+                "id": 7,
+                "name": "Lee",
+                "left": {
+                    "id": 11,
+                    "name": "Fate"
+                }
+            },
+            "right": {
+                "id": 8,
+                "name": "Annie",
+                "left": {
+                    "id": 12,
+                    "name": "Saber"
+                }
+            }
+        },
+        "right": {
+            "id": 4,
+            "name": "Tony",
+            "left": {
+                "id": 9,
+                "name": "Candy"
+            }
+        }
+    },
+    "right": {
+        "id": 2,
+        "name": "right",
+        "left": {
+            "id": 5,
+            "name": "Carl",
+        },
+        "right": {
+            "id": 6,
+            "name": "Carl",
+            "right": {
+                "id": 10,
+                "name": "Kai"
+            }        
+        }
+    }
+}
+
+// 假设id和name均不会重复，根据输入name找到对应的id
+function findIdByName(obj,name) {
+    if(obj.name==name)
+    {
+        console.log(obj.id);
+    }
+    if(obj.left)
+    {  
+        findIdByName(obj.left,name);  
+    }  
+    if(obj.right)
+    { 
+        findIdByName(obj.right,name);  
+    }  
+}
+findIdByName(tree,'Carl');
+// 假设id和name均不会重复，根据输入id找到对应的name
+function findNameById(obj,id) {
+    if(obj.id==id)
+    {
+        console.log(obj.name);
+    }
+    if(obj.left)
+    {  
+        findNameById(obj.left,id);  
+    }  
+    if(obj.right)
+    { 
+        findNameById(obj.right,id);  
+    }  
+}
+findNameById(tree,'1');
+// 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
+function getListWithDLR(obj) {
+    console.log(obj.name); 
+    if(obj.left)
+    {  
+       getListWithDLR(obj.left);  
+    }  
+    if(obj.right)
+    { 
+       getListWithDLR(obj.right);  
+    }  
+}
+console.log("前序遍历：");  
+getListWithDLR(tree);  
+// 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
+function getListWithLDR(obj) {
+    if(obj.left)
+    {  
+       getListWithLDR(obj.left);  
+    }  
+    console.log(obj.name);  
+    if(obj.right)
+    {  
+       getListWithLDR(obj.right);  
+    }         
+}
+console.log("中序遍历：");  
+getListWithLDR(tree); 
+// 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
+function getListWithLRD(obj) {
+    if(obj.left)
+    {  
+    getListWithLRD(obj.left);  
+     }  
+    if(obj.right)
+    {  
+    getListWithLRD(obj.right);  
+     }   
+     console.log(obj.name);  
+}
+console.log("后序遍历：");  
+getListWithLRD(tree);  
+
+//  <!-- code 5 -->    
+var queue = ["apple", "pear"];
+var queuelen=queue.length;
+document.getElementById("in-btn").onclick=function(){
+    var a=[];
+    var ptext;
+    for(var i=0;i<queuelen;i++)
+    {
+        a.unshift(queue[i]);
+    }
+    for(var i=0;i<a.length;i++)
+    {
+        ptext=a.join("->");
+        document.getElementById("queue-cont").innerText=ptext;
+    }
+    }
+//  <!-- code 6 -->  
+var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+function sortNumber(a,b)
+{
+return a - b
+}
+function sortNumber1(a,b)
+{
+return b-a
+}
+console.log(arr.sort(sortNumber));
+console.log(arr.sort(sortNumber1));
+</script>
+</html>
