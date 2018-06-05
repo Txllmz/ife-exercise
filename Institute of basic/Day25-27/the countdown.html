@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>the countdown</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </title>
+</head>
+<style>   
+        /* .interval {
+            border-bottom: solid thin black;
+            padding-bottom: 10px;
+            padding-top: 10px;  
+        } */       
+</style>
+<body>
+    <div class="interval">
+        <p id="showtime"></p>
+    </div> 
+    <!-- <div class="interval">
+        <select id="year-select">
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            ……
+            <option value="2032">2002</option>
+        </select>
+        
+        <select id="month-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            ……
+            <option value="12">12</option>
+        </select>
+        
+        <select id="day-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            ……
+            <option value="31">31</option>
+        </select>
+        
+        <select id="hour-select">
+            <option value="0">00</option>
+            <option value="1">01</option>        
+            ……
+            <option value="23">23</option>
+        </select>
+        
+        <select id="minite-select">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            ……
+            <option>59</option>
+        </select>
+        
+        <select id="second-select">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            ……
+            <option>59</option>
+        </select>
+        
+        <p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p> -->
+    </div>
+</body>
+<script type="text/javascript">
+// <!-- code 1 -->
+function Go() {
+    console.log("Go");
+    }
+function GoSteps(n) {
+    if(n===undefined || n==true)
+    {
+        Go();
+    }
+    else if(typeof(n)=='number')
+    {  
+        n=Math.floor(n);
+        while (n--) {
+        Go();
+    }
+    }
+}
+// GoSteps(10); // Go 10次
+// GoSteps(1); // Go 1次
+// GoSteps(); // Go 1次，认为缺少参数时，默认参数为1
+// GoSteps(0);  // 0次
+// GoSteps(-1);  // 0次
+// GoSteps(1.4);  // Go 1次
+// GoSteps(1.6);  // Go 1次
+// GoSteps(-1);  // 0次
+// GoSteps(true);  // Go 1次
+// GoSteps(false);  // 0次
+// GoSteps("Test");  // 0次
+// GoSteps(NaN);  // 0次
+// GoSteps(null);  // 0次
+
+//<!-- code 2 -->
+   
+    var myDate=new Date();
+    var year=myDate.getFullYear();//年
+    var month=myDate.getMonth()+1;//月
+    var date=myDate.getDate();//日
+    var day=myDate.getDay();//星期
+    var hour=myDate.getHours();//小时
+    var min=myDate.getMinutes();//分钟
+    var sec=myDate.getSeconds();//秒数
+    
+    var time={
+        Year:year,
+        Month:month,
+        Date:date,
+        Day:day,
+        Hour:hour,
+        Min:min,
+        Sec:sec
+    }
+ //来根据某个日期返回这一天是星期几
+function week(one){
+ var weekname;
+ var arr=["星期天","星期一","星期二","星期三","星期四","星期五","星期六"];
+ for(var i=0;i<7;i++)
+ {
+     if(one==i)
+     {
+         weekname=arr[i];
+         break;
+     }
+ }
+ return weekname;
+}
+//把月、日、小时等出现个位数的情况前面补充0，补充为两位，比如1变为01
+function  supplyzero(two){
+var zerotwo; 
+ if(two<10)
+ {
+    zerotwo="0"+two.toString();
+    return zerotwo;
+ }
+ else
+ {
+     zerotwo=two;
+     return zerotwo;
+ }
+}
+//把最后的日期时间，按照要求的格式进行包装
+function package(obj){
+var state;
+state=obj.Year+"年"+supplyzero(obj.Month)+"月"+supplyzero(obj.Date)+"日"+
+week(obj.Day)+supplyzero(obj.Hour)+":"+supplyzero(obj.Min)+":"+supplyzero(obj.Sec);
+return state;
+}
+function show(){
+    document.getElementById("showtime").innerText=package(time);
+}
+var n=setInterval(show,1000);
+</script>
+</html>
