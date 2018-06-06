@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>send email to lover</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </title>
+</head>
+<style type="text/css">   
+          #email-input {
+            display: block;
+          }
+          li:hover{
+              background-color: aquamarine;
+              width: 170px;
+          }
+          li {
+              width: 170px;
+          }
+</style>
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text" >
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+</body>
+<script type="text/javascript">
+ // 邮箱后缀List参考
+var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+// 增加一个变量，用于存储当前选中的提示Li的序号
+var nowSelectTipIndex = 0;
+// 获取用户输入，生成提示框中的提示内容，将提示内容添加到email-sug-wrapper中
+// 控制email-sug-wrapper的显示/隐藏状态
+document.getElementById("email-input").onkeyup = function(e) {
+
+  // 新增:如果按键不是上下及回车重置选中状态()
+  if(e.keyCode!=38 && e.keyCode!=40 && e.keyCode!=13)
+  {
+      reset();
+  }
+  
+   var input_text=getinput();// 获取用户输入
+   controlinput(input_text);
+   var lili=prompt(input_text);//生成提示框中的提示内容
+   addinput(lili);//将提示内容添加到email-sug-wrapper中
+   
+   var ull=document.getElementById('email-sug-wrapper').getElementsByTagName("li");
+
+   //按的是上键
+  if(e.keyCode==38)
+  {
+      if(nowSelectTipIndex!=0)
+      {
+          nowSelectTipIndex-=1;
+      }
+      else
+      {
+          nowSelectTipIndex=ull.length-1;
+      }
+  }
+  //按的是下键
+  if(e.keyCode==40)
+  {
+      if(nowSelectTipIndex==ull.length-1)
+      {
+          nowSelectTipIndex=0;
+      }
+      else
+      {
+          nowSelectTipIndex+=1;
+      }
+  }
+  //按的是回车
+  if(e.keyCode==13)
+  {
+    var mess=ull[nowSelectTipIndex].innerText;
+    document.getElementById("email-input").value=mess;
+    hideprompt();
+  }
+
+    // 新增:将第nowSelectTipIndex个Li的样式设置为被选样式
+   
+   ull[nowSelectTipIndex].style.backgroundColor='pink';
+
+   for(i=0;i<ull.length;i++){
+    ull[i].onclick = function(){
+            var mess=this.innerHTML;
+            document.getElementById("email-input").value=mess;
+        }
+    }
+}
+//重置选中状态
+function reset() {
+    nowSelectTipIndex=0;
+}
+//获取用户输入:拿到input输入框的输入内容trim后返回 
+function getinput() {
+       var text=document.getElementById("email-input").value;
+       text=text.trim();
+       return text;
+}
+//生成提示框中的提示内容: 获取用户输入
+    // 遍历postfixList {
+    //     把用户输入和每一个postfix进行结合成为每一个Li
+    // }
+    // 返回生成的提示内容
+function prompt(input) {
+    var newprompt=new Array();
+    var prefix;
+    if(input.indexOf("@")!=-1) 
+   {
+       var location=input.indexOf("@");
+       var cloneinput=input;
+       input=cloneinput.substr(0,location);//用来拼接的用户输入内容 = @之前的字符串
+       prefix=cloneinput.substr(location+1,cloneinput.length-1);//用来前缀匹配的用户输入内容 = @之后的字符串
+   }
+   for(var i=0;i<postfixList.length;i++)
+   {   
+       if(prefix!=undefined)
+       {
+        if(postfixList[i].indexOf(prefix)!=-1)
+       {
+        newprompt.push(input+'@'+postfixList[i]);
+        continue;
+       }
+       }
+       else
+       {
+        newprompt.push(input+'@'+postfixList[i]);
+       }
+
+       
+   }
+   if(newprompt.length!=0)
+   {return newprompt;}
+   else
+   {
+       return " ";
+   }
+   
+}
+// 将提示内容添加到email-sug-wrapper中:
+    // 获取生成提示框中的提示内容
+    // 将内容添加到email-sug-wrapper中
+function addinput(promptinfor) {
+    var str="<li>"+promptinfor[0]+"</li>";
+    for(var i=1;i<promptinfor.length;i++)
+    {
+        str +="<li>"+promptinfor[i]+"</li>";
+    }
+    document.getElementById("email-sug-wrapper").innerHTML=str;
+}
+//控制email-sug-wrapper的显示/隐藏状态:
+// if 用户输入为空 {
+//         隐藏提示框
+//     } else {
+//         显示提示框
+//     }
+function controlinput(ifinput) {
+   if(ifinput=="")
+   {
+    hideprompt();
+   }
+   else
+   {
+    showprompt();
+   }
+}
+//隐藏提示框:做具体隐藏提示框的操作
+function hideprompt() {
+    document.getElementById("email-sug-wrapper").style.display="none";
+}
+//显示提示框:做具体显示提示框的操作
+function showprompt() {
+    document.getElementById("email-sug-wrapper").style.display="inline";
+}
+
+
+</script>
+</html>
