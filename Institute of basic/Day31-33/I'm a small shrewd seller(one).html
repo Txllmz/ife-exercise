@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I'm a small shrewd seller(one)</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </title>
+</head>
+<style type="text/css">   
+         
+</style>
+<body>
+    <div>
+            <label>地区：</label>
+            <div id="region-radio-wrapper">
+            <!-- <input type="checkbox">华东</input>
+            <input type="checkbox" name="checkbox2" value="checkbox">华南</input>
+            <input type="checkbox" name="checkbox3" value="checkbox">华北</input>
+            <input type="checkbox" name="checkbox3" value="checkbox">全选</input> -->
+            </div>
+            <!-- <select id="region-select">
+                <option>华东</option>
+                <option>华南</option>
+                <option>华北</option>
+            </select> -->
+    </div>
+    <div>
+            <label>产品：</label>
+            <div id="product-radio-wrapper">
+            <!-- <input type="checkbox" name="checkbox1" value="checkbox">手机</input>
+            <input type="checkbox" name="checkbox1" value="checkbox">笔记本</input>
+            <input type="checkbox" name="checkbox1" value="checkbox">华北</input>
+            <input type="checkbox" checkbox-type="all">全选</input> -->
+            </div>
+            <!-- <select id="product-select">
+            <option>手机</option>
+            <option>笔记本</option>
+            <option>智能音箱</option>
+            </select> -->
+    </div>
+    
+    <div id="table-wrapper">
+    </div>
+</body>
+<script type="text/javascript">
+
+function make_checkbox(id,arr){
+//生成全选checkbox的html，给一个自定义属性表示为全选checkbox，比如checkbox-type="all"
+var select_all="<input name='all' value='all' type='checkbox'>全选</input>";
+// 遍历参数对象 {
+    // 生成各个子选项checkbox的html，给一个自定义属性表示为子选项
+    // }
+    var checkbox=select_all+"<input type='checkbox' >"+arr[0].text+"</input>";
+    for(var i=1;i<arr.length;i++)
+    {
+        checkbox+="<input name='one' checkbox-type='one' type='checkbox'>"+arr[i].text+"</input>";
+    }
+    document.getElementById(id).innerHTML=checkbox;
+
+    document.getElementById(id).onclick=function(){
+        var a=document.getElementById(id).children;
+        for(var i=0;i<a.length;i++)
+        {
+          if(a[i].checked==true)
+          {  
+              console.log(a[i].value);
+              if(a[i].value=='all')
+              {
+                a[1].checked=true;
+                a[2].checked=true;
+                a[3].checked=true;
+              }
+              else
+              {
+
+              }
+          break;
+          }
+         
+        }
+    }
+}
+make_checkbox('region-radio-wrapper',[{
+    value:1,
+    text:"华东"},
+    {
+    value:2,
+    text:"华南"    
+    },{
+    value:3,
+    text:"华北"    
+    }])
+
+// document.getElementById('region-select').onchange=function(){
+//     // 渲染新的表格(根据select选项获取数据)
+//     var selected=document.getElementById('region-select').value;
+//     var tabledata=getData(selected);
+//     render_table(tabledata);
+// }
+// document.getElementById('product-select').onchange=function(){
+//     // 渲染新的表格(根据select选项获取数据)
+//     var selectedregion=document.getElementById('region-select').value;
+//     var selectedproduct=document.getElementById('product-select').value;
+//     var tabledata=getData2(selectedregion,selectedproduct);
+//     render_table(tabledata);
+// }
+//根据select选项获取数据
+function getData2(reg,pro){
+    let sourceData = [{
+    product: "手机",
+    region: "华东",
+    sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+}, {
+    product: "手机",
+
+
+    region: "华北",
+    sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+}, {
+    product: "手机",
+    region: "华南",
+    sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+}, {
+    product: "笔记本",
+    region: "华东",
+    sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+}, {
+    product: "笔记本",
+    region: "华北",
+    sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+}, {
+    product: "笔记本",
+    region: "华南",
+    sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+}, {
+    product: "智能音箱",
+    region: "华东",
+    sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+}, {
+    product: "智能音箱",
+    region: "华北",
+    sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+}, {
+    product: "智能音箱",
+    region: "华南",
+    sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+}];
+var len=sourceData.length;
+var selectedData=new Array();
+for(var i=0;i<len;i++)
+{
+if(reg==sourceData[i].region && pro==sourceData[i].product)
+{
+    selectedData.push(sourceData[i]);
+}
+}
+return selectedData;
+}
+
+//根据select选项获取数据
+function getData(reg){
+    let sourceData = [{
+    product: "手机",
+    region: "华东",
+    sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+}, {
+    product: "手机",
+    region: "华北",
+    sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+}, {
+    product: "手机",
+    region: "华南",
+    sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+}, {
+    product: "笔记本",
+    region: "华东",
+    sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+}, {
+    product: "笔记本",
+    region: "华北",
+    sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+}, {
+    product: "笔记本",
+    region: "华南",
+    sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+}, {
+    product: "智能音箱",
+    region: "华东",
+    sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+}, {
+    product: "智能音箱",
+    region: "华北",
+    sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+}, {
+    product: "智能音箱",
+    region: "华南",
+    sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+}];
+var len=sourceData.length;
+var selectedData=new Array();
+for(var i=0;i<len;i++)
+{
+if(reg==sourceData[i].region)
+{
+    selectedData.push(sourceData[i]);
+}
+}
+return selectedData;
+}
+
+//渲染新的表格
+function render_table(data) {
+    document.getElementById('table-wrapper').innerHTML = "";
+   
+    var table = document.createElement("table");
+    table.border = "1";
+    table.width = "50%";
+    //输出表头：商品、地区、1月、2月、…… 12月
+    var tr = table.insertRow(table.rows.length);
+    var td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "商品";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "地区";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "1月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "2月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "3月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "4月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "5月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "6月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "7月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "8月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "9月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "10月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "11月";
+    td = tr.insertCell(tr.cells.length);
+    td.innerHTML = "12月";
+    // 遍历数据 {
+    //     输出每一行的表格HTML内容
+    // }
+    for(var i=0;i<data.length;i++)
+    { 
+    var trnew = table.insertRow(table.rows.length);
+    var tdnew = trnew.insertCell(trnew.cells.length);
+    tdnew.innerHTML = data[i].product;
+    tdnew = trnew.insertCell(trnew.cells.length);
+    tdnew.innerHTML = data[i].region;
+    var saledata=data[i].sale;
+    for(var j=0;j<saledata.length;j++)
+    {
+    tdnew = trnew.insertCell(trnew.cells.length);
+    tdnew.innerHTML = saledata[i];
+    }
+    }
+    document.querySelector('#table-wrapper').appendChild(table);
+    // 把生成的HTML内容赋给table-wrapper
+}
+</script>
+</html>
