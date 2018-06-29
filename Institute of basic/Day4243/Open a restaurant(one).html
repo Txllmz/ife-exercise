@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open a restaurant(one)</title>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </title>
+</head>
+<style type="text/css">   
+         
+</style>
+<body>
+       
+   
+</body>
+<script type="text/javascript">
+//餐厅类
+var Restaurant=function(money,seat,staff_list){
+    this.money=money;
+    this.seat=seat;
+    this.staff_list=staff_list;
+}
+//招聘职员
+Restaurant.prototype.hire=function(obj){
+   console.log("招聘职员");
+   this.staff_list.push(obj);
+}
+//解雇职员
+Restaurant.prototype.fire=function(obj){
+   console.log("解雇职员");
+   this.staff_list.pop(obj);
+}
+
+//职员类
+var Staff=function(id,name,salary){
+    this.id=id;
+    this.name=name;
+    this.salary=salary;
+}
+//完成一次工作
+Staff.prototype.finish_onework=function(){
+
+}
+
+//服务员类
+function Serviceworker(){
+    Staff.call(this);
+    this.finish_onework=function(arg){
+       if(ary.constructor==Array)
+       {
+          //记录客人点菜
+       }
+       else{
+          //上菜行为
+       }
+    }
+}
+
+//厨师类
+function Cook(id,name,salary){
+    Staff.call(this,id,name,salary);
+}
+//完成一次工作
+Cook.prototype.finish_onework=function(){
+ 
+}
+
+
+//顾客类
+var Customer=function(){
+    this.eat=function(){
+
+    }
+}
+
+//菜品类
+var food=function(food_name,cooking_cost,price){
+    this.food_name=food_name;
+    this.cooking_cost=cooking_cost;
+    this.price=price;
+}
+
+//测试
+var ifeRestaurant = new Restaurant(
+    1000000,
+    20,
+    []
+);
+console.log(ifeRestaurant.seat);
+var newCook = new Cook(0001,"Tony", 10000);
+ifeRestaurant.hire(newCook);
+
+console.log(ifeRestaurant.staff_list);
+
+ifeRestaurant.fire(newCook);
+console.log(ifeRestaurant.staff_list);
+</script>
+</html>
